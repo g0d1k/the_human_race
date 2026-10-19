@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=The Human Race
+GenericName=Space Shooter
+Comment=8-bit NES-style space shooter for 1 or 2 players
+Exec=the-human-race
+Icon=the-human-race
+Terminal=false
+Categories=Game;ArcadeGame;
+Keywords=shmup;shooter;retro;nes;arcade;
