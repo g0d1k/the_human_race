@@ -1,7 +1,7 @@
 """Player ships: ARES-1 (player 1, red) and GAIA-2 (player 2, green)."""
 from config import PLAY_TOP, PLAY_BOTTOM, SCREEN_W
 
-SPEEDS = (1.25, 1.6, 1.95, 2.3)
+SPEEDS = (1.25, 1.85, 2.35, 2.75)
 START_LIVES = 3
 START_BOMBS = 2
 MAX_BOMBS = 5
@@ -166,8 +166,13 @@ class Player:
         x = int(self.x)
         y = int(self.y)
         spr = sprites[self.sprite_name]
-        flame = sprites["flame%d" % ((self.anim >> 2) & 1)]
-        surf.blit(flame.img, (x - 7, y + 6))
+        frame = (self.anim >> 2) & 1
+        if self.speed_level:
+            flame = sprites["flame%d_%d" % (self.speed_level, frame)]
+        else:
+            flame = sprites["flame%d" % frame]
+        # the flame grows backwards from the engine as speed goes up
+        surf.blit(flame.img, (x + 1 - flame.w, y + 6))
         surf.blit(spr.img, (x, y))
         if self.shield:
             sh = sprites["shield%d" % ((self.anim >> 3) & 1)]

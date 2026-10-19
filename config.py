@@ -6,7 +6,7 @@ import copy
 import pygame
 
 TITLE = "THE HUMAN RACE"
-VERSION = "1.0"
+VERSION = "1.1"
 SCREEN_W = 256
 SCREEN_H = 240
 FPS = 60

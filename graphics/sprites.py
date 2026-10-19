@@ -95,6 +95,10 @@ class SpriteBank:
         s["gaia"] = make(D.GAIA, D.GAIA_COLORS)
         s["flame0"] = make(D.FLAME[0], D.FLAME_COLORS)
         s["flame1"] = make(D.FLAME[1], D.FLAME_COLORS)
+        # longer flames for speed levels 1-3 (level 0 uses flame0/flame1)
+        for lvl, length in ((1, 12), (2, 16), (3, 21)):
+            for f in range(2):
+                s["flame%d_%d" % (lvl, f)] = make(D.flame_grid(length, f), D.FLAME_COLORS)
         s["life1"] = make(D.LIFE_ICON, (0x16, 0x30, 0x10))
         s["life2"] = make(D.LIFE_ICON, (0x1A, 0x30, 0x10))
         s["bomb_icon"] = make(D.BOMB_ICON, D.BOMB_ICON_COLORS)

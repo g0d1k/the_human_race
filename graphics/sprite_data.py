@@ -501,6 +501,21 @@ def capsule_grid(width, height):
     return rows
 
 
+def flame_grid(length, flicker):
+    """Engine flame pointing left, `length` pixels long, 4 rows tall.
+    2 = yellow (hottest, next to the engine), 1 = orange, 3 = red tip.
+    The flicker frame is a little shorter."""
+    if flicker:
+        length -= 2
+    rows = []
+    for row_len in (int(length * 0.6), length, length, int(length * 0.6)):
+        hot = max(2, row_len * 3 // 10)
+        mid = max(2, row_len * 35 // 100)
+        tip = row_len - hot - mid
+        rows.append("." * (length - row_len) + "3" * tip + "1" * mid + "2" * hot)
+    return rows
+
+
 def explosion_grid(size, radius, ring, seed):
     """A dithered fireball: 3 = hot core, 2 = mid, 1 = outer flame."""
     rows = []

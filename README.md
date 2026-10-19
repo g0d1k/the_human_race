@@ -24,7 +24,7 @@ APU emulator (2 pulse voices, triangle, noise) at startup.
 **Using the AppImage directly** (no install, no Python needed):
 
 ```bash
-./dist/TheHumanRace-1.0-x86_64.AppImage
+./dist/TheHumanRace-*-x86_64.AppImage
 ```
 
 **From source** (any OS with Python), see [Requirements](#requirements) below.
@@ -128,7 +128,7 @@ you respawn from the left with about 2 seconds of invincibility.
 |---|---|
 | **P** Power | Weapon level up: single, double, spread, spread + rear (max 4) |
 | **L** Laser | Switch to a piercing laser (keeps weapon level) |
-| **S** Speed | Ship speed up (max 3) |
+| **S** Speed | Ship speed up, up to 3 levels (S3 is about twice as fast). Your engine flame grows with each level |
 | **B** Bomb | +1 bomb (max 5). Bombs clear bullets and damage everything |
 | **O** Shield | Absorbs one hit |
 | **1UP** | Extra life (rare) |
@@ -160,7 +160,7 @@ Build a single-file AppImage (about 16 MB, with Python and pygame bundled inside
 
 The first build needs internet access. It downloads PyInstaller, pygame-ce
 and `appimagetool` into `build/`. The result is
-`dist/TheHumanRace-1.0-x86_64.AppImage`, which you can run directly or copy to
+`dist/TheHumanRace-<version>-x86_64.AppImage`, which you can run directly or copy to
 another PC.
 
 To install it for your user, with an application-menu entry and icon (no root needed):
